@@ -8,10 +8,4 @@ TrajectoryPlannerROS:
   acc_lim_x: 2.5
   acc_lim_y: 2.5
 
-  # Goal Tolerance Parametes
-  xy_goal_tolerance: 0.5
-  yaw_goal_tolerance: 3.2
-  latch_xy_goal_tolerance: false
-
-
   holonomic_robot: false

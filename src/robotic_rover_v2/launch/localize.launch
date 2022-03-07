@@ -10,7 +10,7 @@
 	<arg name="node_start_delay" default="5.0" />  
 
 	<!-- Run the map server --> 
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find robotic_rover_v2)/maps/apartment_map.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find robotic_rover_v2)/maps/my_map.yaml"/>
 
 	<!-- Add transformations. -->
 
@@ -88,8 +88,8 @@
 	    <param name="odom_model_type" value="diff" />
 	    <param name="transform_tolerance" value="0.2" />
 	    <param name="gui_publish_rate" value="-1.0"/>
-	    <param name="laser_max_beams" value="60"/>
-	    <param name="laser_max_range" value="12"/>
+	    <param name="laser_max_beams" value="30"/>
+	    <param name="laser_max_range" value="29.5"/>
 	    <param name="min_particles" value="3"/>
 	    <param name="max_particles" value="20"/>
 	    <param name="update_min_d" value="0.01"/>
@@ -109,8 +109,8 @@
 	    <param name="laser_model_type" value="likelihood_field"/>
 	    <param name="laser_likelihood_max_dist" value="2.0"/>
 	    <param name="update_min_a" value="0.5"/>
-	    <param name="resample_interval" value="2"/>
-	    <param name="transform_tolerance" value="0.3"/>
+	    <param name="resample_interval" value="5"/>
+	    <param name="transform_tolerance" value="2.0"/>
 	    <param name="recovery_alpha_slow" value="0.0"/>
 	    <param name="recovery_alpha_fast" value="0.0"/>
 	  </node> 
