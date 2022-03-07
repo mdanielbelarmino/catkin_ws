@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <param name="robot_description" command="cat $(find robotic_rover_v2)/urdf/robotic_rover_v2.urdf"/>
+
+  <rosparam file="$(find robotic_rover_v2)/config/controllers.yaml" command="load"/>
+  <rosparam file="$(find robotic_rover_v2)/config/joint_limits.yaml" command="load"/>
+  
+  <node name="robot_hardware_interface" pkg="robotic_rover_v2" type="mobile_robot_hardware_interface" output="screen">
+    <remap from="/robotic_rover_v2/mobile_base_controller/cmd_vel" to="/cmd_vel"/>
+   </node>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value=""/>
+  </node>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotic_rover_v2)/config/rviz_config.rviz"/>
+  
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+            /robotic_rover_v2/joints_update
+            /robotic_rover_v2/mobile_base_controller" >
+  </node>
+  
+</launch>

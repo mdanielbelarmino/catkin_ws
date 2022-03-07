@@ -1,0 +1,4 @@
+<launch>
+  <arg name="urdf_file" default="$(find robotic_rover_v2)/urdf/robotic_rover_v2.urdf'" />
+  <param name="robot_description" command="$(arg urdf_file)" />
+</launch>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="trial_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0015469944415764 0 -0.0501831136277785"
+        rpy="0 0 0" />
+      <mass
+        value="9.95078171509376" />
+      <inertia
+        ixx="0.0601227616494761"
+        ixy="7.31244024412708E-18"
+        ixz="0.000270499745566088"
+        iyy="0.140876399625272"
+        iyz="-2.39547571901342E-20"
+        izz="0.184107375655444" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_link">
+    <inertial>
+      <origin
+        xyz="-7.0432E-06 0.020264 -1.8312E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.32782" />
+      <inertia
+        ixx="0.00076695"
+        ixy="-1.3324E-07"
+        ixz="5.8443E-13"
+        iyy="0.0013622"
+        iyz="-2.7163E-12"
+        izz="0.00076693" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial_robot/meshes/left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial_robot/meshes/left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.14 0.129 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="right_link">
+    <inertial>
+      <origin
+        xyz="7.0096E-06 -0.020264 -6.8728E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.32782" />
+      <inertia
+        ixx="0.00076695"
+        ixy="-1.3261E-07"
+        ixz="-1.7063E-09"
+        iyy="0.0013622"
+        iyz="1.3001E-08"
+        izz="0.00076693" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial_robot/meshes/right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial_robot/meshes/right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.14 -0.129 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+
+
+
+  <gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>100.0</updateRate>
+
+    <!-- Name of left joint, defaults to `left_joint` -->
+    <leftJoint>left_joint</leftJoint>
+
+    <!-- Name of right joint, defaults to `right_joint` -->
+    <rightJoint>right_joint</rightJoint>
+
+    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+    <wheelSeparation>0.3</wheelSeparation>
+
+    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+    <wheelDiameter>0.15</wheelDiameter>
+
+    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+    <wheelAcceleration>1.0</wheelAcceleration>
+
+    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame, defaults to `odom` -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+    <robotBaseFrame>base_footprint</robotBaseFrame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometrySource>1</odometrySource>
+
+    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the odometry, defaults to true -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to swap right and left wheels, defaults to true -->
+    <legacyMode>false</legacyMode>
+  </plugin>
+</gazebo>
+
+</robot>

@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robotic_rover">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00288018614203336 0.000211924547677017 -0.0766636799264719"
+        rpy="0 0 0" />
+      <mass
+        value="10.0" />
+      <inertia
+        ixx="0.0920191810097629"
+        ixy="1.58972329736214E-05"
+        ixz="-0.00397569722051905"
+        iyy="0.121530514331288"
+        iyz="0.000126348365020198"
+        izz="0.0630880808273991" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FL_link">
+    <inertial>
+      <origin
+        xyz="5.69600275235338E-06 0.0317356327821489 -4.14269968390668E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.327820252904825" />
+      <inertia
+        ixx="0.00076693913987317"
+        ixy="-1.07758994727015E-07"
+        ixz="-8.35705243353546E-09"
+        iyy="0.00136217378112651"
+        iyz="7.83721329039584E-08"
+        izz="0.000766933727696302" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/FL_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/FL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_joint"
+    type="continuous">
+    <origin
+      xyz="-0.12743 -0.19546 -0.255"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FL_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="FR_link">
+    <inertial>
+      <origin
+        xyz="-6.20341563517535E-06 -0.0317356327821492 -3.33527247703413E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.327820252904845" />
+      <inertia
+        ixx="0.000766941278267077"
+        ixy="-1.17358286121129E-07"
+        ixz="7.32763476252277E-09"
+        iyy="0.00136217378112658"
+        iyz="-6.30969479207548E-08"
+        izz="0.000766931589302465" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/FR_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/FR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_joint"
+    type="continuous">
+    <origin
+      xyz="-0.12743 0.19654 -0.255"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FR_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="RL_link">
+    <inertial>
+      <origin
+        xyz="5.69600275165949E-06 0.0317356327821492 -4.14269968379566E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.327820252904825" />
+      <inertia
+        ixx="0.000766939139873175"
+        ixy="-1.07758994727555E-07"
+        ixz="-8.35705243455978E-09"
+        iyy="0.00136217378112651"
+        iyz="7.83721329054811E-08"
+        izz="0.000766933727696295" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/RL_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/RL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_joint"
+    type="continuous">
+    <origin
+      xyz="0.12257 -0.19546 -0.255"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RL_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="RR_link">
+    <inertial>
+      <origin
+        xyz="-5.69600275249216E-06 -0.0317356327821493 -4.14269968612713E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.327820252904821" />
+      <inertia
+        ixx="0.000766939139873145"
+        ixy="-1.07758994732913E-07"
+        ixz="8.35705242918811E-09"
+        iyy="0.00136217378112649"
+        iyz="-7.83721329047717E-08"
+        izz="0.000766933727696311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/RR_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/RR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_joint"
+    type="continuous">
+    <origin
+      xyz="0.12257 0.19654 -0.255"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RR_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="PC_link">
+    <inertial>
+      <origin
+        xyz="-2.40083518093792E-07 6.17701556571149E-09 0.00253639107192796"
+        rpy="0 0 0" />
+      <mass
+        value="1.36978307966779" />
+      <inertia
+        ixx="0.00325430234447903"
+        ixy="8.99100011542789E-06"
+        ixz="-1.14319568884003E-07"
+        iyy="0.00298770675047518"
+        iyz="-5.73772205150559E-09"
+        izz="0.00294673228376205" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/PC_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/PC_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PC_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.27315"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="PC_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="1"
+      velocity="0.5" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="TC_link">
+    <inertial>
+      <origin
+        xyz="-0.000470045088241361 0.0450097916874978 -0.00221961139514565"
+        rpy="0 0 0" />
+      <mass
+        value="0.669752936652558" />
+      <inertia
+        ixx="0.00085393278364478"
+        ixy="1.25962044388134E-06"
+        ixz="-3.31682759107273E-05"
+        iyy="0.000816893642756303"
+        iyz="-1.13569368206208E-06"
+        izz="0.000818648983044741" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/TC_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotic_rover/meshes/TC_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TC_joint"
+    type="continuous">
+    <origin
+      xyz="0.001518 -0.044974 0.084851"
+      rpy="0 0 0" />
+    <parent
+      link="PC_link" />
+    <child
+      link="TC_link" />
+    <axis
+      xyz="0.033733 -0.99943 0" />
+    <limit
+      effort="1"
+      velocity="0.5" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>FL_joint</leftFrontJoint>
+      <rightFrontJoint>FR_joint</rightFrontJoint>
+      <leftRearJoint>RL_joint</leftRearJoint>
+      <rightRearJoint>RR_joint</rightRearJoint>
+      <wheelSeparation>0.3</wheelSeparation>
+      <wheelDiameter>0.15</wheelDiameter>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <torque>20</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <broadcastTF>true</broadcastTF>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <covariance_x>0.001</covariance_x> <!-- 0.0001 -->
+      <covariance_y>0.001</covariance_y> <!-- 0.0001 -->
+      <covariance_yaw>0.01</covariance_yaw> <!-- 0.01 -->
+    </plugin>
+  </gazebo>
+
+  <!-- IMU -->
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="imu_link"/>
+  
+  <gazebo reference="imu_link">
+    <sensor type="imu" name="imu">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+    </sensor>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>imu_link</bodyName>
+      <frameName>imu_link</frameName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>0</updateRate>
+      <imu>
+        <noise>
+          <type>gaussian</type>
+          <rate>
+            <mean>0.0</mean>
+            <stddev>2e-4</stddev>
+            <bias_mean>0.0000075</bias_mean>
+            <bias_stddev>0.0000008</bias_stddev>
+          </rate>
+          <accel>
+            <mean>0.0</mean>
+            <stddev>1.7e-2</stddev>
+            <bias_mean>0.1</bias_mean>
+            <bias_stddev>0.001</bias_stddev>
+          </accel>
+        </noise>
+      </imu>
+    </plugin>
+  </gazebo>
+
+  <!-- Lidar -->
+  <link name="base_scan">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://turtlebot3_description/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0315" radius="0.055"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.114" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001" />
+    </inertial>
+  </link>
+
+  <joint name="scan_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_scan"/>
+    <origin xyz="-0.012 0 0.052" rpy="0 0 0"/>
+  </joint>
+
+  <gazebo reference="base_scan">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="lds_lfcd_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>6.28319</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>3.5</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>base_scan</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+  <!-- Camera -->
+  <gazebo reference="TC_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+ <gazebo reference="PC_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+
+  <!-- Wheels -->
+  <gazebo reference="FL_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo reference="FR_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo reference="RL_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo reference="RR_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- Main -->
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+
+</robot>
