@@ -8,7 +8,7 @@
   </node>
 
   <!-- roslaunch realsense2_camera opensource_tracking.launch -->
-  <include ile="$(find realsense2_camera)/launch/opensource_tracking.launch" />
+  <include file="$(find realsense2_camera)/launch/opensource_tracking.launch" >
   <arg name="approx_sync" value="true" />
   </include>
 
