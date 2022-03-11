@@ -7,9 +7,11 @@
   <node pkg="mpu_6050_driver" type="tf_broadcaster_imu.py" name="tf_broadcaster_imu_node">
   </node>
 
+  <!--arg name="enable_sync" default="true" /-->    
+
   <!-- roslaunch realsense2_camera opensource_tracking.launch -->
   <include file="$(find realsense2_camera)/launch/opensource_tracking.launch" >
-  <arg name="approx_sync" value="true" />
+   <param name="enable_sync" value="true"/>
   </include>
 
 </launch>
