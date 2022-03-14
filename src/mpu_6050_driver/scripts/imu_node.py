@@ -90,8 +90,9 @@ if __name__ == '__main__':
 
     bus.write_byte_data(ADDR, PWR_MGMT_1, 0)
 
-    temp_pub = rospy.Publisher('temperature', Temperature)
-    imu_pub = rospy.Publisher('imu/data', Imu)
-    imu_timer = rospy.Timer(rospy.Duration(0.02), publish_imu)
-    temp_timer = rospy.Timer(rospy.Duration(10), publish_temp)
+    # temp_pub = rospy.Publisher('temperature', Temperature)
+    imu_pub = rospy.Publisher('imu/data', Imu, queue_size=0)
+    imu_timer = rospy.Timer(rospy.Duration(0.00001), publish_imu)
+    # temp_timer = rospy.Timer(rospy.Duration(0.1), publish_temp)
+    # publish_imu()
     rospy.spin()
