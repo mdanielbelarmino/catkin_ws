@@ -13,7 +13,7 @@
   <!--arg name="enable_sync" default="true" /-->    
 
   <!-- roslaunch realsense2_camera opensource_tracking.launch -->
-  <include file="$(find realsense2_camera)/launch/opensource_tracking.launch" >
+  <include file="$(find realsense2_camera)/launch/opensource_tracking_online.launch" >
    <param name="enable_sync" value="true"/>
   </include>
 
