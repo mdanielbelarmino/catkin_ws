@@ -25,7 +25,7 @@
         <arg name="depth_topic" value="/camera/aligned_depth_to_color/image_raw"/>
         <arg name="camera_info_topic" value="/camera/color/camera_info"/>
         <arg name="depth_camera_info_topic" value="/camera/depth/camera_info"/>
-        <arg name="rtabmapviz" value="true"/>
+        <arg name="rtabmapviz" value="false"/>
         <arg name="rviz" value="false"/>
 	</include>
 
