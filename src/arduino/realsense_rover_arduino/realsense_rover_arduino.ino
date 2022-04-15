@@ -62,6 +62,10 @@ void messageCb( const geometry_msgs::Twist& cmd)
   angular_velocity = (angular_velocity < 0.0001 && angular_velocity > -0.0001) ? 0.0 : angular_velocity;
   linear_velocity = (linear_velocity < 0.0001 && linear_velocity > -0.0001) ? 0.0 : linear_velocity;
 
+  angular_velocity = angular_velocity >= 1.9 ? 1.9 : angular_velocity;
+  angular_velocity = angular_velocity <= -1.9 ? -1.9 : angular_velocity;
+    
+
   double Vl = (linear_velocity - angular_velocity * wheel_base / 2) / wheel_radius;
   double Vr = (linear_velocity + angular_velocity * wheel_base / 2) / wheel_radius;
 
