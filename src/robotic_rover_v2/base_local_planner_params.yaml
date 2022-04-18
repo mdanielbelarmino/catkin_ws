@@ -1,17 +1,18 @@
 TrajectoryPlannerROS:
-  max_vel_x: 0.9
-  min_vel_x: 0.5
-  max_vel_theta: 1.2
-  min_in_place_vel_theta: 1.0
+  max_vel_x: 0.2
+  min_vel_x: 0.1
+  max_vel_theta: 0.2
+  min_in_place_vel_theta: 0.5
 
-  acc_lim_theta: 3.2
-  acc_lim_x: 2.5
-  acc_lim_y: 2.5
+  acc_lim_theta: 1.5
+  acc_lim_x: 0.5
+  acc_lim_y: 0.5
+
+  global_frame_id: /map
 
   # Goal Tolerance Parametes
-  xy_goal_tolerance: 0.5
+  xy_goal_tolerance: 0.25
   yaw_goal_tolerance: 3.2
   latch_xy_goal_tolerance: false
-
 
   holonomic_robot: false
