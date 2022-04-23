@@ -186,7 +186,7 @@ void loop()
 
     analogWrite(pwm_pinL, pwmL);      //sets the desired speed
     analogWrite(pwm_pinR, pwmR);      //sets the desired speed
-    publishSpeed(LOOPTIME);
+    publishSpeed(period);
   }
 
   attachInterrupt(0, isrL, RISING);
@@ -200,8 +200,8 @@ void loop()
 void publishSpeed(double time) {
   speed_msg.header.stamp = nh.now();      //timestamp for odometry data
   speed_msg.vector.x = curr_spdL;    //left wheel speed (in m/s)
-  speed_msg.vector.y = curr_spdL;   //right wheel speed (in m/s)
-  speed_msg.vector.z = time / 10;       //looptime, should be the same as specified in LOOPTIME (in s)
+  speed_msg.vector.y = curr_spdR;   //right wheel speed (in m/s)
+  speed_msg.vector.z = time / 1000;       //looptime, should be the same as specified in LOOPTIME (in s)
   speed_pub.publish(&speed_msg);
   //  nh.loginfo("Publishing odometry");
 }
