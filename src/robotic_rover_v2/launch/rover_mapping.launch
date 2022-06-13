@@ -7,6 +7,16 @@
     <param name="port" value="/dev/ttyACM0"/>
   </node>
 
+  <node name="rover_odom" pkg="robotic_rover_v2" type="rover_odom">
+    <param name="publish_tf" value="true" />
+        <param name="publish_rate" value="10.0" />
+        <param name="linear_scale_positive" value="1.025" />
+        <param name="linear_scale_negative" value="1.025" />
+        <param name="angular_scale_positive" value="1.078" />
+        <param name="angular_scale_negative" value="1.078" />
+    <param name="angular_scale_accel" value="0.0" />
+  </node> 
+
   <include file="$(find robotic_rover_v2)/launch/tutorial.launch" />
 
 </launch>
