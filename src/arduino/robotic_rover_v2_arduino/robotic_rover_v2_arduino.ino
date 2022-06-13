@@ -11,6 +11,9 @@
 #define MAX_SPEED 0.2
 #define LOOPTIME 100
 
+int8_t left_dir = 1;
+int8_t right_dir = 1;
+
 int t2 = 0;
 int t1;
 int period;
@@ -58,6 +61,9 @@ void messageCb( const geometry_msgs::Twist& cmd)
   double Vl = (linear_velocity - angular_velocity * wheel_base / 2) / wheel_radius;
   double Vr = (linear_velocity + angular_velocity * wheel_base / 2) / wheel_radius;
 
+  left_dir = (Vl >= 0) ? 1 : -1;
+  right_dir = (Vr >= 0) ? 1 : -1;
+  
   des_spdL = abs(Vl);
   des_spdR = abs(Vr);
 
@@ -186,7 +192,7 @@ void loop()
 
     analogWrite(pwm_pinL, pwmL);      //sets the desired speed
     analogWrite(pwm_pinR, pwmR);      //sets the desired speed
-    publishSpeed(LOOPTIME);
+    publishSpeed(period);
   }
 
   attachInterrupt(0, isrL, RISING);
@@ -199,9 +205,9 @@ void loop()
 //Publish function for odometry, uses a vector type message to send the data (message type is not meant for that but that's easier than creating a specific message type)
 void publishSpeed(double time) {
   speed_msg.header.stamp = nh.now();      //timestamp for odometry data
-  speed_msg.vector.x = curr_spdL;    //left wheel speed (in m/s)
-  speed_msg.vector.y = curr_spdL;   //right wheel speed (in m/s)
-  speed_msg.vector.z = time / 10;       //looptime, should be the same as specified in LOOPTIME (in s)
+  speed_msg.vector.x = curr_spdL * left_dir;    //left wheel speed (in m/s)
+  speed_msg.vector.y = curr_spdR * right_dir;   //right wheel speed (in m/s)
+  speed_msg.vector.z = time / 1000;       //looptime, should be the same as specified in LOOPTIME (in s)
   speed_pub.publish(&speed_msg);
   //  nh.loginfo("Publishing odometry");
 }
